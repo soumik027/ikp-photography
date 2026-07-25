@@ -1,0 +1,134 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    /* Dark Luxury Theme for Django Admin */
+    :root {
+        --bg-main: #0b0b0b;
+        --bg-card: #121212;
+        --bg-header: #000000;
+        --gold-primary: #d4af37;
+        --gold-hover: #c59b27;
+        --text-light: #e0e0e0;
+        --border-gold: rgba(212, 175, 55, 0.2);
+    }
+
+    body {
+        background-color: var(--bg-main) !important;
+        color: var(--text-light) !important;
+        font-family: 'Montserrat', sans-serif !important;
+    }
+
+    /* Header & Navigation Bar */
+    #header {
+        background: var(--bg-header) !important;
+        color: var(--gold-primary) !important;
+        border-bottom: 1px solid var(--border-gold);
+    }
+
+    #header a:link, #header a:visited {
+        color: var(--gold-primary) !important;
+    }
+
+    #branding h1 a {
+        color: var(--gold-primary) !important;
+        font-family: 'Cormorant Garamond', serif !important;
+        letter-spacing: 1px;
+    }
+
+    /* Breadcrumbs */
+    div.breadcrumbs {
+        background: #141414 !important;
+        color: #a0a0a0 !important;
+        border-bottom: 1px solid var(--border-gold);
+    }
+
+    div.breadcrumbs a {
+        color: var(--gold-primary) !important;
+    }
+
+    /* Content Modules & Cards */
+    #content {
+        background: var(--bg-main) !important;
+    }
+
+    .module, .dashboard .module {
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-gold) !important;
+        border-radius: 0px !important;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    }
+
+    .module caption, .inline-group h2 {
+        background: #1a1a1a !important;
+        color: var(--gold-primary) !important;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.2rem;
+        border-bottom: 1px solid var(--border-gold);
+    }
+
+    /* Tables & Lists */
+    table {
+        background: var(--bg-card) !important;
+        color: var(--text-light) !important;
+    }
+
+    thead th {
+        background: #1a1a1a !important;
+        color: var(--gold-primary) !important;
+        border-bottom: 2px solid var(--gold-primary) !important;
+    }
+
+    tr.row1 { background: var(--bg-card) !important; }
+    tr.row2 { background: #161616 !important; }
+    tbody tr:hover { background: #1f1f1f !important; }
+
+    /* Form Inputs, Textareas & Select Boxes */
+    input, textarea, select {
+        background: #1a1a1a !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(212, 175, 55, 0.3) !important;
+        border-radius: 0px !important;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: var(--gold-primary) !important;
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Luxury Gold Buttons */
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        background: var(--gold-primary) !important;
+        color: #000000 !important;
+        border: none !important;
+        border-radius: 0px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .button:hover, input[type=submit]:hover {
+        background: var(--gold-hover) !important;
+    }
+
+    /* Pagination / Footers */
+    .paginator {
+        background: var(--bg-card) !important;
+        border-top: 1px solid var(--border-gold);
+        color: var(--text-light) !important;
+    }
+
+    .paginator a:link, .paginator a:visited {
+        background: #1a1a1a !important;
+        color: var(--gold-primary) !important;
+        border: 1px solid var(--border-gold);
+    }
+
+    .paginator span.current {
+        background: var(--gold-primary) !important;
+        color: #000000 !important;
+    }
+</style>
+{% endblock %}

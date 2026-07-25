@@ -1,0 +1,207 @@
+/* ==========================================
+   Luxury Wedding Photography - Custom Theme
+   ========================================== */
+
+:root {
+    --bg-dark: #080808;
+    --bg-darker: #050505;
+    --bg-card: rgba(15, 15, 15, 0.75);
+    --gold: #d4af37;
+    --gold-hover: #f3e5ab;
+    --gold-dark: #aa8c2c;
+    --text-light: #e5e5e5;
+    --text-muted: #adb5bd;
+    --border-color: rgba(212, 175, 55, 0.15);
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+/* Typography */
+.font-serif {
+    font-family: var(--font-serif) !important;
+}
+
+.tracking-wider {
+    letter-spacing: 0.15em;
+}
+
+.tracking-widest {
+    letter-spacing: 0.25em;
+}
+
+/* Colors & Accents */
+.text-gold {
+    color: var(--gold) !important;
+}
+
+.bg-gold {
+    background-color: var(--gold) !important;
+    color: #000 !important;
+}
+
+.bg-gold:hover {
+    background-color: var(--gold-hover) !important;
+    color: #000 !important;
+}
+
+.btn-gold {
+    background-color: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    transition: all 0.4s ease;
+}
+
+.btn-gold:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: #000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.hover-gold:hover {
+    color: var(--gold) !important;
+    transition: color 0.3s ease;
+}
+
+/* Navbar */
+.luxury-navbar {
+    background: rgba(8, 8, 8, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.4s ease;
+}
+
+.luxury-navbar .nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+}
+
+.luxury-navbar .nav-link:hover,
+.luxury-navbar .nav-link.active {
+    color: var(--gold) !important;
+}
+
+/* Luxury Editorial Card (Sharp Minimalist Style) */
+.luxury-editorial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 0px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.luxury-editorial-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Legacy Card Support */
+.luxury-card {
+    background-color: #161616;
+    border: 1px solid #262626;
+    border-radius: 0px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.luxury-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: rgba(20, 20, 20, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 0px;
+}
+
+.glass-card:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Minimalist Outlined Buttons */
+.btn-luxury-outline {
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #ffffff;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    padding: 12px 28px;
+    transition: all 0.3s ease;
+    border-radius: 0px;
+}
+
+.btn-luxury-outline:hover {
+    background: var(--gold);
+    color: #000000;
+    border-color: var(--gold);
+}
+
+/* Form Inputs */
+input.form-control, textarea.form-control, select.form-select {
+    background-color: #161616 !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-light) !important;
+    border-radius: 0px !important;
+}
+
+input.form-control:focus, textarea.form-control:focus, select.form-select:focus {
+    background-color: #161616 !important;
+    border-color: var(--gold) !important;
+    color: var(--text-light) !important;
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Alerts */
+.alert-gold {
+    background-color: rgba(212, 175, 55, 0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-hover);
+}
+
+/* Hero Editorial Background */
+.hero-editorial-bg {
+    background: linear-gradient(
+        to bottom, 
+        rgba(8, 8, 8, 0.6), 
+        rgba(8, 8, 8, 0.4) 50%, 
+        rgba(8, 8, 8, 0.95)
+    ), 
+    url('../images/hero-wedding.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.hero-editorial-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 20%, rgba(8, 8, 8, 0.85) 90%);
+    pointer-events: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+}

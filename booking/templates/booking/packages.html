@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Packages & Pricing | Indrajeet Karmakar Photography{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<header class="py-5 mt-5 bg-black border-bottom border-dark text-center">
+    <div class="container py-4">
+        <span class="text-gold text-uppercase tracking-widest small d-block mb-2">Investment</span>
+        <h1 class="font-serif display-3 fw-bold text-white mb-3">Wedding Packages & Pricing</h1>
+        <div class="mx-auto bg-gold mb-3" style="width: 60px; height: 2px;"></div>
+        <p class="text-secondary lead mx-auto" style="max-width: 650px;">
+            Transparent, comprehensive collections designed to preserve your wedding story with cinematic excellence.
+        </p>
+    </div>
+</header>
+
+<!-- Packages Grid Section -->
+<section class="py-5 my-4">
+    <div class="container py-4">
+        <div class="row g-4 align-items-stretch">
+            {% for package in packages %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="card luxury-card h-100 border rounded-0 d-flex flex-column justify-content-between p-4 bg-dark">
+                        <div>
+                            {% if package.cover_image %}
+                                <div class="mb-4 overflow-hidden" style="height: 200px;">
+                                    <img src="{{ package.cover_image.url }}" alt="{{ package.name }}" class="w-100 h-100 object-fit-cover">
+                                </div>
+                            {% endif %}
+                            <h3 class="font-serif h3 fw-bold text-white mb-2">{{ package.name }}</h3>
+                            <div class="mb-3">
+                                <span class="display-5 font-serif text-gold fw-bold">₹{{ package.price|floatformat:0 }}</span>
+                            </div>
+                            <p class="text-secondary small mb-4">{{ package.description }}</p>
+                            
+                            <hr class="border-secondary opacity-25 mb-4">
+                            
+                            <h5 class="text-uppercase tracking-wider small text-gold fw-semibold mb-3">What's Included:</h5>
+                            <ul class="list-unstyled text-secondary small mb-4">
+                                {% for feature in package.get_features_list %}
+                                    <li class="mb-2 d-flex align-items-start">
+                                        <i class="fas fa-check text-gold me-2 mt-1"></i>
+                                        <span>{{ feature }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div>
+                            <a href="{% url 'book_event_with_package' package.id %}" class="btn btn-gold w-150 w-100 py-3 rounded-pill text-uppercase small tracking-widest fw-semibold">
+                                Select Package
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12 text-center text-secondary py-5">
+                    <div class="py-5">
+                        <i class="fas fa-tags fa-3x text-gold mb-3"></i>
+                        <h3 class="font-serif h4 text-white">No Packages Configured Yet</h3>
+                        <p class="small">Add wedding pricing packages via the Django Admin panel.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Custom Quote Banner -->
+<section class="py-5 bg-black border-top border-dark text-center">
+    <div class="container py-4">
+        <h3 class="font-serif h2 text-white mb-3">Planning a Destination or Custom Wedding?</h3>
+        <p class="text-secondary mx-auto mb-4" style="max-width: 600px;">
+            If your celebration spans multiple days or takes place abroad, we can create a fully customized photography and cinematic coverage plan.
+        </p>
+        <a href="{% url 'book_event' %}" class="btn btn-outline-light px-5 py-3 rounded-pill text-uppercase small tracking-widest">
+            Request Custom Quote
+        </a>
+    </div>
+</section>
+{% endblock %}

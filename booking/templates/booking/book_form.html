@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book Consultation | Indrajeet Karmakar Photography{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<header class="py-5 mt-5 bg-black border-bottom border-dark text-center">
+    <div class="container py-4">
+        <span class="text-gold text-uppercase tracking-widest small d-block mb-2">Secure Your Date</span>
+        <h1 class="font-serif display-3 fw-bold text-white mb-3">Book Your Consultation</h1>
+        <div class="mx-auto bg-gold mb-3" style="width: 60px; height: 2px;"></div>
+        <p class="text-secondary lead mx-auto" style="max-width: 650px;">
+            Fill out the form below to check availability and schedule your wedding photography session.
+        </p>
+    </div>
+</header>
+
+<!-- Booking Form Section -->
+<section class="py-5 my-3">
+    <div class="container" style="max-width: 750px;">
+        <div class="card luxury-card p-4 p-md-5 bg-dark border rounded-0">
+            <form method="POST">
+                {% csrf_token %}
+                
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger mb-4">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <div class="row g-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.name.id_for_label }}" class="form-label text-secondary small uppercase tracking-wider">Your Full Name <span class="text-gold">*</span></label>
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                            <div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.phone.id_for_label }}" class="form-label text-secondary small uppercase tracking-wider">Phone Number <span class="text-gold">*</span></label>
+                        {{ form.phone }}
+                        {% if form.phone.errors %}
+                            <div class="text-danger small mt-1">{{ form.phone.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.email.id_for_label }}" class="form-label text-secondary small uppercase tracking-wider">Email Address <span class="text-gold">*</span></label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.event_date.id_for_label }}" class="form-label text-secondary small uppercase tracking-wider">Event Date <span class="text-gold">*</span></label>
+                        {{ form.event_date }}
+                        {% if form.event_date.errors %}
+                            <div class="text-danger small mt-1">{{ form.event_date.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.venue.id_for_label }}" class="form-label text-secondary small uppercase tracking-wider">Venue & City <span class="text-gold">*</span></label>
+                        {{ form.venue }}
+                        {% if form.venue.errors %}
+                            <div class="text-danger small mt-1">{{ form.venue.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ form.selected_package.id_for_label }}" class="form-label text-secondary small uppercase tracking-wider">Preferred Package</label>
+                        {{ form.selected_package }}
+                        {% if form.selected_package.errors %}
+                            <div class="text-danger small mt-1">{{ form.selected_package.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-12 mb-4">
+                        <label for="{{ form.message.id_for_label }}" class="form-label text-secondary small uppercase tracking-wider">Wedding Vision & Details</label>
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                            <div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-gold w-100 py-3 rounded-pill text-uppercase tracking-widest fw-semibold shadow-sm">
+                            Submit Booking Inquiry
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

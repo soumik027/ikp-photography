@@ -1,0 +1,117 @@
+/* Dark Luxury Theme for Django Admin */
+body {
+    background-color: #0b0b0b !important;
+    color: #e0e0e0 !important;
+    font-family: inherit;
+}
+
+/* Header & Navigation */
+#header {
+    background: #000000 !important;
+    color: #d4af37 !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+#header a:link, #header a:visited {
+    color: #d4af37 !important;
+}
+
+/* Breadcrumbs */
+div.breadcrumbs {
+    background: #141414 !important;
+    color: #a0a0a0 !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+div.breadcrumbs a {
+    color: #d4af37 !important;
+}
+
+/* Content Area & Modules */
+#content {
+    background: #0b0b0b !important;
+}
+
+.module, .dashboard .module {
+    background: #121212 !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    border-radius: 0px !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+.module caption, .inline-group h2 {
+    background: #1a1a1a !important;
+    color: #d4af37 !important;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Tables & Lists */
+table {
+    background: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+thead th {
+    background: #1a1a1a !important;
+    color: #d4af37 !important;
+    border-bottom: 2px solid #d4af37 !important;
+}
+
+tr.row1 {
+    background: #121212 !important;
+}
+
+tr.row2 {
+    background: #161616 !important;
+}
+
+tbody tr:hover {
+    background: #1f1f1f !important;
+}
+
+/* Form Inputs & Fields */
+input, textarea, select {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 0px !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+/* Buttons (Gold Luxury Look) */
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #d4af37 !important;
+    color: #000000 !important;
+    border: none !important;
+    border-radius: 0px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button:hover, input[type=submit]:hover {
+    background: #c59b27 !important;
+}
+
+/* Pagination & Footers */
+.paginator {
+    background: #121212 !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: #e0e0e0 !important;
+}
+
+.paginator a:link, .paginator a:visited {
+    background: #1a1a1a !important;
+    color: #d4af37 !important;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.paginator span.current {
+    background: #d4af37 !important;
+    color: #000000 !important;
+}
