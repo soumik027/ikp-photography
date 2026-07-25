@@ -69,12 +69,32 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get('DATABASE_URL', f"sqlite:///{BASE_DIR / 'db.sqlite3'}"),
-        conn_max_age=600,
-    )
-}
+database_url = os.environ.get('DATABASE_URL')
+
+if database_url and database_url.strip():
+    try:
+        DATABASES = {
+            'default': dj_database_url.parse(database_url, conn_max_age=600)
+        }
+    except Exception:
+        # Fallback dictionary method if special characters in password break URL parsing
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'postgres',
+                'USER': 'postgres',
+                'PASSWORD': 'YOUR_PASSWORD_HERE',  # Replace with your raw Supabase password
+                'HOST': 'db.fgsrgjrobrxebwujcmrb.supabase.co',
+                'PORT': '5432',
+            }
+        }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
