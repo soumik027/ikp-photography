@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block extra_head %}{% endblock %}
 </head>
+
 <body class="bg-dark text-light">
 
     <!-- Navbar -->
@@ -41,7 +42,7 @@
                         <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'stories_list' %}">Wedding Stories</a>
+                        <a class="nav-link" href="{% url 'events' %}">Events Captured</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'packages' %}">Packages</a>

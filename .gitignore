@@ -16,4 +16,14 @@ staticfiles/
 
 # IDE files
 .vscode/
+.idea/
+
+# OS files
 .DS_Store
+desktop.ini
+
+# Environment variables
+.env
+
+# Media uploads (optional)
+media/
