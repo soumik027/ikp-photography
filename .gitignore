@@ -1,29 +1,19 @@
-# Virtual Environment
 venv/
 env/
 ENV/
 
-# Django local database
-db.sqlite3
-
-# Python bytecode & cache
 __pycache__/
 *.py[cod]
-*$py.class
 
-# Static files for production
+db.sqlite3
+
 staticfiles/
 
-# IDE files
 .vscode/
 .idea/
 
-# OS files
-.DS_Store
 desktop.ini
+.DS_Store
 
-# Environment variables
 .env
-
-# Media uploads (optional)
 media/

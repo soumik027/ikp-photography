@@ -12,10 +12,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wedding-photography-portfolio-secret-key-change-in-prod'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "ikp-photography.onrender.com",
+]
 # Application definition
 
 INSTALLED_APPS = [
