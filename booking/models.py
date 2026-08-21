@@ -6,7 +6,6 @@ class Package(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, help_text="e.g., 1500.00")
     description = models.TextField(help_text="Brief description of what is included.")
     features = models.TextField(help_text="List features separated by newlines or commas.")
-    cover_image = models.ImageField(upload_to='packages/', blank=True, null=True)
     order = models.PositiveIntegerField(default=0)
 
     class Meta:

@@ -5,12 +5,13 @@
 
 {% block content %}
 <!-- Page Header -->
-<header class="py-5 mt-5 bg-black border-bottom border-dark text-center">
-    <div class="container py-4">
-        <span class="text-gold text-uppercase tracking-widest small d-block mb-2">Behind The Lens</span>
-        <h1 class="font-serif display-3 fw-bold text-white mb-3">About Indrajeet Karmakar</h1>
-        <div class="mx-auto bg-gold mb-3" style="width: 60px; height: 2px;"></div>
-        <p class="text-secondary lead mx-auto" style="max-width: 650px;">
+<!-- Page Header -->
+<header class="bg-black border-bottom border-dark text-center py-4" style="margin-top: 70px;">
+    <div class="container py-3">
+        <span class="text-accent text-uppercase tracking-widest small d-block mb-2">Behind The Lens</span>
+        <h1 class="font-serif display-4 fw-bold text-white mb-2">About Indrajeet Karmakar</h1>
+        <div class="mx-auto bg-accent mb-3" style="width: 50px; height: 2px;"></div>
+        <p class="text-secondary small mx-auto mb-0" style="max-width: 600px;">
             Documenting authentic, unscripted love stories with fine art precision and cinematic elegance.
         </p>
     </div>
@@ -22,35 +23,36 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-5">
                 <div class="position-relative">
+                    <!-- Photo remains static as requested -->
                     <img src="{% static 'images/photographer.jpg' %}" alt="Indrajeet" class="img-fluid rounded luxury-card w-100 shadow-lg" style="object-fit: cover; height: 500px;">
                 </div>
             </div>
             <div class="col-lg-7">
-                <span class="text-gold text-uppercase tracking-widest small d-block mb-2">My Journey</span>
-                <h2 class="font-serif display-5 fw-bold mb-4">Capturing Emotion & Legacy</h2>
+                <span class="text-gold text-uppercase tracking-widest small d-block mb-2">{{ profile.subtitle|default:"My Journey" }}</span>
+                <h2 class="font-serif display-5 fw-bold mb-4">{{ profile.title|default:"Capturing Emotion & Legacy" }}</h2>
                 <p class="text-secondary mb-3">
-                    Over the last 8 years, I have had the honor of documenting hundreds of weddings across breathtaking destinations. For me, wedding photography is not merely about posing for portraits—it is about capturing the subtle, fleeting moments that tell the true story of your day.
+                    {{ profile.bio_paragraph_1|default:"Over the last 8 years, I have had the honor of documenting hundreds of weddings across breathtaking destinations. For me, wedding photography is not merely about posing for portraits—it is about capturing the subtle, fleeting moments that tell the true story of your day." }}
                 </p>
                 <p class="text-secondary mb-4">
-                    My aesthetic blends editorial fine-art compositions with documentary-style candid story-telling. From quiet intimate exchanges to grand cultural traditions, I ensure every memory is preserved as a timeless masterpiece.
+                    {{ profile.bio_paragraph_2|default:"My aesthetic blends editorial fine-art compositions with documentary-style candid story-telling. From quiet intimate exchanges to grand cultural traditions, I ensure every memory is preserved as a timeless masterpiece." }}
                 </p>
 
                 <div class="row g-4 mt-2">
                     <div class="col-6 col-md-4">
                         <div class="border-start border-gold ps-3">
-                            <h3 class="font-serif display-6 fw-bold text-white mb-0">8+</h3>
+                            <h3 class="font-serif display-6 fw-bold text-white mb-0">{{ profile.years_experience|default:"8+" }}</h3>
                             <span class="small text-secondary text-uppercase tracking-wider">Years Experience</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
                         <div class="border-start border-gold ps-3">
-                            <h3 class="font-serif display-6 fw-bold text-white mb-0">150+</h3>
+                            <h3 class="font-serif display-6 fw-bold text-white mb-0">{{ profile.weddings_shot|default:"150+" }}</h3>
                             <span class="small text-secondary text-uppercase tracking-wider">Weddings Shot</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
                         <div class="border-start border-gold ps-3">
-                            <h3 class="font-serif display-6 fw-bold text-white mb-0">12+</h3>
+                            <h3 class="font-serif display-6 fw-bold text-white mb-0">{{ profile.countries|default:"12+" }}</h3>
                             <span class="small text-secondary text-uppercase tracking-wider">Countries</span>
                         </div>
                     </div>

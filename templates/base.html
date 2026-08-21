@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{% block title %}Indrajeet Karmakar | Luxury Wedding Photography{% endblock %}</title>
     
     <!-- Google Fonts: Cormorant Garamond & Montserrat -->
@@ -22,7 +22,7 @@
     {% block extra_head %}{% endblock %}
 </head>
 
-<body class="bg-dark text-light">
+<body class="bg-dark text-light overflow-x-hidden">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top luxury-navbar">
@@ -87,7 +87,9 @@
                 <div class="col-md-4 text-center">
                     <div class="social-icons d-flex justify-content-center gap-3">
                         {% if site_settings.email %}
-                            <a href="mailto:{{ site_settings.email }}" class="text-secondary hover-gold" title="Email"><i class="fas fa-envelope fa-lg"></i></a>
+                        <a href="mailto:karmakar.indrajit02@gmail.com?subject=Inquiry%20regarding%20photography%20services" class="text-secondary fs-5 px-2" title="Email Us">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                         {% endif %}
                         {% if site_settings.phone %}
                             <a href="tel:{{ site_settings.phone }}" class="text-secondary hover-gold" title="Phone"><i class="fas fa-phone-alt fa-lg"></i></a>
@@ -115,6 +117,20 @@
     
     <!-- Custom JS -->
     <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        document.addEventListener("touchstart", function() {}, {true}); 
+        
+        const touchElements = document.querySelectorAll('.luxury-card, .glass-card, .event-section, .btn-gold, .btn-luxury-outline');
+        touchElements.forEach(el => {
+            el.addEventListener('touchstart', () => {
+                el.classList.add('is-touched');
+            }, {passive: true});
+            
+            el.addEventListener('touchend', () => {
+                setTimeout(() => el.classList.remove('is-touched'), 200);
+            }, {passive: true});
+        });
+    </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

@@ -24,11 +24,6 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card luxury-card h-100 border rounded-0 d-flex flex-column justify-content-between p-4 bg-dark">
                         <div>
-                            {% if package.cover_image %}
-                                <div class="mb-4 overflow-hidden" style="height: 200px;">
-                                    <img src="{{ package.cover_image.url }}" alt="{{ package.name }}" class="w-100 h-100 object-fit-cover">
-                                </div>
-                            {% endif %}
                             <h3 class="font-serif h3 fw-bold text-white mb-2">{{ package.name }}</h3>
                             <div class="mb-3">
                                 <span class="display-5 font-serif text-gold fw-bold">₹{{ package.price|floatformat:0 }}</span>
@@ -48,7 +43,7 @@
                             </ul>
                         </div>
                         <div>
-                            <a href="{% url 'book_event_with_package' package.id %}" class="btn btn-gold w-150 w-100 py-3 rounded-pill text-uppercase small tracking-widest fw-semibold">
+                            <a href="{% url 'book_event_with_package' package.id %}" class="btn btn-gold w-100 py-3 rounded-pill text-uppercase small tracking-widest fw-semibold">
                                 Select Package
                             </a>
                         </div>

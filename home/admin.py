@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PhotographerProfile, Service, Testimonial
+from .models import PhotographerProfile
 
 # Customizing Admin Header Titles
 admin.site.site_header = "Indrajeet Karmakar Administration"
@@ -16,11 +16,11 @@ class LuxuryAdminCssMixin:
 
 @admin.register(PhotographerProfile)
 class PhotographerProfileAdmin(admin.ModelAdmin, LuxuryAdminCssMixin):
-    list_display = ('name', 'tagline', 'years_of_experience', 'weddings_captured')
+    list_display = ('name', 'tagline', 'years_experience', 'weddings_shot', 'countries')
     
     class Media:
         css = {
-            'all': ('admin/css/custom_admin.css',) # Falls back or applies your custom styling block
+            'all': ('admin/css/custom_admin.css',)
         }
 
     def has_add_permission(self, request):
@@ -28,15 +28,3 @@ class PhotographerProfileAdmin(admin.ModelAdmin, LuxuryAdminCssMixin):
         if count >= 1 and not request.resolver_match.url_name.endswith('_change'):
             return False
         return super().has_add_permission(request)
-
-@admin.register(Service)
-class ServiceAdmin(admin.ModelAdmin, LuxuryAdminCssMixin):
-    list_display = ('title', 'order', 'short_description')
-    list_editable = ('order',)
-    search_fields = ('title', 'short_description')
-
-@admin.register(Testimonial)
-class TestimonialAdmin(admin.ModelAdmin, LuxuryAdminCssMixin):
-    list_display = ('client_names', 'wedding_date', 'is_featured')
-    list_filter = ('is_featured', 'wedding_date')
-    search_fields = ('client_names', 'comment')

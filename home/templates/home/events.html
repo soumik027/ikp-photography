@@ -5,19 +5,17 @@
 
 {% block content %}
 
-<section class="events-hero text-center py-5">
+<section class="events-hero text-center py-5" style="padding-top: 140px !important;">
     <div class="container">
-        <span class="section-subtitle text-gold">
+        <span class="text-gold text-uppercase tracking-widest small d-block mb-2">
             PORTFOLIO
         </span>
-        <h1 class="display-2 mb-4 text-light">
+        <h1 class="display-3 font-serif fw-bold text-white mb-3">
             Events Captured
         </h1>
-        <p class="hero-description text-muted mx-auto" style="max-width: 600px;">
-            Every celebration tells a story.
-            Explore weddings, portraits, engagements,
-            birthdays and timeless memories captured
-            through the lens of IKP Photography.
+        <div class="mx-auto bg-gold mb-3" style="width: 60px; height: 2px;"></div>
+        <p class="text-secondary lead mx-auto" style="max-width: 600px;">
+            Every celebration tells a story. Explore weddings, portraits, engagements, birthdays and timeless memories captured through the lens of IKP Photography.
         </p>
     </div>
 </section>
@@ -25,13 +23,55 @@
 <div class="container pb-5" style="max-width: 1000px;">
 
 <!-- ======================================================= -->
+<!-- LATEST SHOOT 1: Royal Bengali Bride -->
+<!-- ======================================================= -->
+<section class="event-section my-5 pt-3">
+    <div class="event-header text-center mb-4">
+        <h2 class="font-serif text-white h3 mb-2">Royal Bengali Bride</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Kolkata • Bridal Session</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">A breathtaking celebration of traditional bridal elegance, timeless gold ornaments and heritage aesthetics.</p>
+    </div>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <img src="{% static 'images/shoot2_1.jpg' %}" alt="Royal Bengali Bride" class="img-fluid shadow-sm rounded w-100" style="height: auto; max-height: 600px; object-fit: contain; background: #000;">
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/shoot2_2.jpg' %}" alt="Royal Bengali Bride" class="img-fluid shadow-sm rounded w-100" style="height: auto; max-height: 600px; object-fit: contain; background: #000;">
+        </div>
+    </div>
+</section>
+
+<hr class="event-divider border-secondary opacity-25 my-5">
+
+<!-- ======================================================= -->
+<!-- LATEST SHOOT 2: Luxury Editorial Portrait -->
+<!-- ======================================================= -->
+<section class="event-section my-5">
+    <div class="event-header text-center mb-4">
+        <h2 class="font-serif text-white h3 mb-2">Luxury Editorial Portrait</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Studio Session • Contemporary Look</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">An exquisite fusion of modern glamour, heritage craftsmanship and cinematic portraiture.</p>
+    </div>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <img src="{% static 'images/shoot1_1.jpg' %}" alt="Editorial Portrait" class="img-fluid shadow-sm rounded w-100" style="height: auto; max-height: 600px; object-fit: contain; background: #000;">
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/shoot1_2.jpg' %}" alt="Editorial Portrait" class="img-fluid shadow-sm rounded w-100" style="height: auto; max-height: 600px; object-fit: contain; background: #000;">
+        </div>
+    </div>
+</section>
+
+<hr class="event-divider border-secondary opacity-25 my-5">
+
+<!-- ======================================================= -->
 <!-- EVENT 1 -->
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Traditional Bengali Wedding</h2>
-        <span class="event-location text-gold">📍 Kolkata • Wedding</span>
-        <p class="text-muted">A timeless Bengali wedding filled with emotions, traditions and unforgettable moments.</p>
+        <h2 class="font-serif text-white h3 mb-2">Traditional Bengali Wedding</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Kolkata • Wedding</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">A timeless Bengali wedding filled with emotions, traditions and unforgettable moments.</p>
     </div>
     <div class="gallery-large mb-3 text-center">
         <img src="{% static 'images/event1_1.jpg' %}" alt="Wedding" class="img-fluid shadow-sm rounded w-100" style="height: auto; max-height: 700px; object-fit: contain; background: #000;">
@@ -53,9 +93,9 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Baby Shoot</h2>
-        <span class="event-location text-gold">📍 Hooghly</span>
-        <p class="text-muted">Tiny smiles, innocent expressions and precious memories preserved forever.</p>
+        <h2 class="font-serif text-white h3 mb-2">Baby Shoot</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Hooghly</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">Tiny smiles, innocent expressions and precious memories preserved forever.</p>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
@@ -74,9 +114,9 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Wedding Rituals</h2>
-        <span class="event-location text-gold">📍 Kolkata</span>
-        <p class="text-muted">Beautiful rituals that make every wedding unforgettable.</p>
+        <h2 class="font-serif text-white h3 mb-2">Wedding Rituals</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Kolkata</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">Beautiful rituals that make every wedding unforgettable.</p>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
@@ -95,9 +135,9 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Baby Portrait</h2>
-        <span class="event-location text-gold">📍 Studio Session</span>
-        <p class="text-muted">Elegant baby portraits celebrating innocence and joy.</p>
+        <h2 class="font-serif text-white h3 mb-2">Baby Portrait</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Studio Session</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">Elegant baby portraits celebrating innocence and joy.</p>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
@@ -116,9 +156,9 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Couple Shoot</h2>
-        <span class="event-location text-gold">📍 Waterfall Session</span>
-        <p class="text-muted">Romantic outdoor portraits surrounded by nature.</p>
+        <h2 class="font-serif text-white h3 mb-2">Couple Shoot</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Waterfall Session</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">Romantic outdoor portraits surrounded by nature.</p>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
@@ -137,9 +177,9 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Bridal Portrait</h2>
-        <span class="event-location text-gold">📍 Bridal Session</span>
-        <p class="text-muted">Grace, elegance and timeless bridal beauty.</p>
+        <h2 class="font-serif text-white h3 mb-2">Bridal Portrait</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Bridal Session</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">Grace, elegance and timeless bridal beauty.</p>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
@@ -158,8 +198,8 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Classic Bridal Shoot</h2>
-        <span class="event-location text-gold">📍 Indoor Portrait</span>
+        <h2 class="font-serif text-white h3 mb-2">Classic Bridal Shoot</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Indoor Portrait</span>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
@@ -178,8 +218,8 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Fashion Portrait</h2>
-        <span class="event-location text-gold">📍 Editorial</span>
+        <h2 class="font-serif text-white h3 mb-2">Fashion Portrait</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Editorial</span>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
@@ -198,8 +238,8 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Reception Portrait</h2>
-        <span class="event-location text-gold">📍 Reception</span>
+        <h2 class="font-serif text-white h3 mb-2">Reception Portrait</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Reception</span>
     </div>
     <div class="row g-3">
         <div class="col-md-6">
@@ -218,9 +258,9 @@
 <!-- ======================================================= -->
 <section class="event-section my-5">
     <div class="event-header text-center mb-4">
-        <h2 class="text-light">Haldi Ceremony</h2>
-        <span class="event-location text-gold">📍 Traditional Ceremony</span>
-        <p class="text-muted">Vibrant colors, laughter and traditions beautifully documented.</p>
+        <h2 class="font-serif text-white h3 mb-2">Haldi Ceremony</h2>
+        <span class="text-gold small text-uppercase tracking-widest d-block mb-2">📍 Traditional Ceremony</span>
+        <p class="text-secondary small mx-auto" style="max-width: 500px;">Vibrant colors, laughter and traditions beautifully documented.</p>
     </div>
     <div class="gallery-large mb-3 text-center">
         <img src="{% static 'images/event10_1.jpg' %}" alt="Haldi" class="img-fluid shadow-sm rounded w-100" style="height: auto; max-height: 700px; object-fit: contain; background: #000;">
