@@ -29,14 +29,13 @@
                 </a>
             </div>
 
-            
-            <!-- Image Column (Hardcoded Static DP to match localhost and deployed 100%) -->
-        <div class="col-lg-6 text-center">
-            <img src="{% static 'images/photographer.jpg' %}"
-            class="img-fluid shadow-lg rounded-1 w-100"
-            style="max-height: 420px; object-fit: contain; background-color: #000;" 
-            alt="Indrajeet Karmakar">
-        </div>
+            <!-- Image Column (Updated to indra.jpg with cache buster) -->
+            <div class="col-lg-6 text-center">
+                <img src="{% static 'images/indra.jpg' %}?v=99"
+                     class="img-fluid shadow-lg rounded-1 w-100"
+                     style="max-height: 420px; object-fit: contain; background-color: #000;" 
+                     alt="Indrajeet Karmakar">
+            </div>
 
         </div>
     </div>
