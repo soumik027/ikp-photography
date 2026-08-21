@@ -1,16 +1,16 @@
 /* ==========================================================
-   Luxury Editorial Photography - Midnight Blue-Black Theme
+   Luxury Editorial Photography - Navy Blue & Midnight Theme
    ========================================================== */
 
 :root {
-    --bg-dark: #03050a;             /* Deep Midnight Blue-Black Base */
-    --bg-charcoal: #0a0f1d;         /* Rich Deep Navy for Alternating Sections */
+    --bg-dark: #03050a;              /* Deep Midnight Blue-Black Base */
+    --bg-charcoal: #090d16;          /* Rich Deep Navy for Alternating Sections */
     --bg-card: rgba(13, 20, 36, 0.75); /* Ice-tinted Navy Glass Surface */
-    --accent-color: #6ba4ff;        /* Elegant Icy Steel Blue Accent */
-    --accent-hover: #9ec2ff;        /* Bright Ice Blue Hover */
+    --accent-color: #3b82f6 !important; /* Elegant Refined Navy/Blue Accent */
+    --accent-hover: #1d4ed8 !important; /* Deep Navy Hover */
     --text-light: #f0f4f8;
     --text-muted: #94a3b8;
-    --border-accent: rgba(107, 164, 255, 0.25);
+    --border-accent: rgba(59, 130, 246, 0.25);
     --glass-blur: blur(20px);
 }
 
@@ -44,45 +44,46 @@ body {
     color: var(--accent-color) !important;
 }
 
-/* Buttons */
+/* Buttons - Unified Sharp Luxury Edges */
 .btn-accent, .btn-gold {
     background: var(--accent-color) !important;
-    color: #03050a !important;
+    color: #ffffff !important;
     border: 1px solid var(--accent-color) !important;
     font-weight: 500;
+    border-radius: 0px !important;
     transition: all 0.3s ease !important;
 }
 
 .btn-accent:hover, .btn-gold:hover {
     background: var(--accent-hover) !important;
-    color: #03050a !important;
-    box-shadow: 0 0 25px rgba(107, 164, 255, 0.6) !important;
-    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5) !important;
+    border-radius: 0px !important;
 }
 
 .btn-luxury-outline {
-    border: 1px solid rgba(107, 164, 255, 0.5) !important;
+    border: 1px solid rgba(59, 130, 246, 0.5) !important;
     color: #ffffff !important;
     background: rgba(255, 255, 255, 0.03) !important;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.75rem;
     padding: 12px 28px;
-    border-radius: 30px;
+    border-radius: 0px !important;
     transition: all 0.3s ease !important;
 }
 
 .btn-luxury-outline:hover {
     background: var(--accent-color) !important;
-    color: #03050a !important;
+    color: #ffffff !important;
     border-color: var(--accent-color) !important;
-    box-shadow: 0 0 25px rgba(107, 164, 255, 0.5) !important;
-    transform: translateY(-2px) !important;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5) !important;
+    border-radius: 0px !important;
 }
 
 /* Navbar */
 .luxury-navbar {
-    background: rgba(3, 5, 10, 0.85) !important;
+    background: rgba(3, 5, 10, 0.9) !important;
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-bottom: 1px solid var(--border-accent);
@@ -102,20 +103,30 @@ body {
     color: var(--accent-color) !important;
 }
 
-/* Glass Cards */
+/* Glass Cards with Generous Breathing Room (Problem 2 Fixed) */
 .luxury-card, .luxury-editorial-card, .glass-card, .event-section {
     background: var(--bg-card) !important;
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--border-accent) !important;
-    border-radius: 16px;
+    border-radius: 4px !important;
+    padding: 2.25rem !important; /* Generous breathing room preventing borders from hugging captions */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
 }
 
+.luxury-card p, .luxury-editorial-card p, .glass-card p {
+    margin-bottom: 1.25rem !important;
+}
+
+.luxury-card h3, .luxury-editorial-card h3, .glass-card h3 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
 .luxury-card:hover, .luxury-editorial-card:hover, .glass-card:hover, .event-section:hover {
-    border-color: rgba(107, 164, 255, 0.8) !important;
+    border-color: rgba(59, 130, 246, 0.8) !important;
     transform: translateY(-5px) !important;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(107, 164, 255, 0.25) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(59, 130, 246, 0.25) !important;
 }
 
 /* Social Icons & Footer */
@@ -133,11 +144,11 @@ body {
 }
 
 .social-icons a:hover, footer a:hover {
-    background: rgba(107, 164, 255, 0.2) !important;
+    background: rgba(59, 130, 246, 0.2) !important;
     color: var(--accent-color) !important;
     border-color: var(--accent-color) !important;
     transform: translateY(-3px) scale(1.05) !important;
-    box-shadow: 0 0 20px rgba(107, 164, 255, 0.4) !important;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4) !important;
 }
 
 footer {
@@ -153,52 +164,6 @@ img, video, canvas, svg {
     height: auto !important;
 }
 
-/* ==========================================================
-   Mobile Touch & Tap Feedback Fix for Hover Effects
-   ========================================================== */
-.luxury-card:active, .luxury-editorial-card:active, .glass-card:active, .event-section:active,
-.luxury-card:focus, .luxury-editorial-card:focus, .glass-card:focus, .event-section:focus {
-    border-color: rgba(107, 164, 255, 0.8) !important;
-    transform: translateY(-4px) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(107, 164, 255, 0.25) !important;
-}
-
-.btn-gold:active, .btn-accent:active, .btn-luxury-outline:active, .social-icons a:active, footer a:active {
-    background-color: var(--accent-color) !important;
-    color: #03050a !important;
-    transform: translateY(-2px) scale(1.05) !important;
-    box-shadow: 0 0 25px rgba(107, 164, 255, 0.5) !important;
-}
-
-.gallery-large img:active, .gallery-two img:active, .event-section img:active {
-    transform: translateY(-4px) scale(1.01) !important;
-    border-color: var(--accent-color) !important;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(107, 164, 255, 0.4) !important;
-}
-
-/* Mobile Touch States */
-.luxury-card.is-touched, 
-.luxury-editorial-card.is-touched, 
-.glass-card.is-touched, 
-.event-section.is-touched {
-    border-color: rgba(107, 164, 255, 0.8) !important;
-    transform: translateY(-4px) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(107, 164, 255, 0.25) !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-.btn-gold.is-touched, 
-.btn-accent.is-touched, 
-.btn-luxury-outline.is-touched {
-    background-color: var(--accent-color) !important;
-    color: #03050a !important;
-    transform: scale(0.97) !important;
-    transition: transform 0.1s ease !important;
-}
-
-/* ==========================================================
-   Mobile Viewport Edge-Cropping & Overflow Fix
-   ========================================================== */
 * {
     box-sizing: border-box !important;
 }
