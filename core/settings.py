@@ -71,23 +71,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-<<<<<<< HEAD
-# Database Configuration (Forced strictly to local SQLite to prevent cloud/Supabase crashes)
+# Database Configuration (Forced strictly to local SQLite to prevent cloud crashes)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-=======
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
->>>>>>> 3fe52d11896fa25ccd2c3775b539fce985dc6be7
     }
 }
 
@@ -147,7 +135,7 @@ if cloudinary_cloud_name:
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email Configuration (Secured with Environment Variables)
+# Email Configuration (Secured via environment variables)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
