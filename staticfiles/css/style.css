@@ -1,33 +1,37 @@
 /* ==========================================================
    Luxury Editorial Photography - Navy Blue & Midnight Theme
+   (Universal Cinzel Font & Cinematic Animations)
    ========================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
 :root {
-    --bg-dark: #03050a;              /* Deep Midnight Blue-Black Base */
-    --bg-charcoal: #090d16;          /* Rich Deep Navy for Alternating Sections */
-    --bg-card: rgba(13, 20, 36, 0.75); /* Ice-tinted Navy Glass Surface */
-    --accent-color: #3b82f6 !important; /* Elegant Refined Navy/Blue Accent */
-    --accent-hover: #1d4ed8 !important; /* Deep Navy Hover */
+    --bg-dark: #03050a;                 /* Deep Midnight Blue-Black Base */
+    --bg-charcoal: #090d16;             /* Rich Deep Navy for Alternating Sections */
+    --bg-card: rgba(13, 20, 36, 0.75);  /* Ice-tinted Navy Glass Surface */
+    --accent-color: #3b82f6 !important;   /* Elegant Refined Navy/Blue Accent */
+    --accent-hover: #1d4ed8 !important;   /* Deep Navy Hover */
     --text-light: #f0f4f8;
     --text-muted: #94a3b8;
     --border-accent: rgba(59, 130, 246, 0.25);
     --glass-blur: blur(20px);
 }
 
+/* UNIVERSAL FONT OVERRIDE: Force Cinzel across every element on the website */
+html, body, p, span, a, h1, h2, h3, h4, h5, h6, 
+button, input, textarea, label, .btn, .nav-link, .navbar-brand {
+    font-family: 'Cinzel', serif !important;
+}
+
 body {
     background-color: var(--bg-dark) !important;
     color: var(--text-light) !important;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 100vw !important;
     overflow-x: hidden !important;
     -webkit-font-smoothing: antialiased;
     padding-top: 75px !important;
-}
-
-/* Typography */
-.font-serif {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    letter-spacing: 0.05em; /* Gives Cinzel that spaced, majestic luxury look */
 }
 
 /* Explicit Alternating Background Classes */
@@ -44,20 +48,22 @@ body {
     color: var(--accent-color) !important;
 }
 
-/* Buttons - Unified Sharp Luxury Edges */
+/* Buttons - Sharp Luxury Edges with Cinematic Glow */
 .btn-accent, .btn-gold {
     background: var(--accent-color) !important;
     color: #ffffff !important;
     border: 1px solid var(--accent-color) !important;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     border-radius: 0px !important;
-    transition: all 0.3s ease !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
 }
 
 .btn-accent:hover, .btn-gold:hover {
     background: var(--accent-hover) !important;
     color: #ffffff !important;
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5) !important;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6) !important;
+    transform: translateY(-2px);
     border-radius: 0px !important;
 }
 
@@ -66,18 +72,19 @@ body {
     color: #ffffff !important;
     background: rgba(255, 255, 255, 0.03) !important;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.15em;
     font-size: 0.75rem;
     padding: 12px 28px;
     border-radius: 0px !important;
-    transition: all 0.3s ease !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
 }
 
 .btn-luxury-outline:hover {
     background: var(--accent-color) !important;
     color: #ffffff !important;
     border-color: var(--accent-color) !important;
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5) !important;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6) !important;
+    transform: translateY(-2px);
     border-radius: 0px !important;
 }
 
@@ -91,10 +98,10 @@ body {
 
 .luxury-navbar .nav-link {
     color: var(--text-light) !important;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
     font-size: 0.8rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     transition: color 0.3s ease;
 }
 
@@ -103,19 +110,47 @@ body {
     color: var(--accent-color) !important;
 }
 
-/* Glass Cards with Generous Breathing Room (Problem 2 Fixed) */
+/* ==========================================================
+   Advanced Cinematic Glassmorphism Cards & Animations
+   ========================================================== */
+@keyframes cinematicFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ambientGlowPulse {
+    0% {
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 20px rgba(59, 130, 246, 0.15);
+    }
+    50% {
+        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.95), 0 0 35px rgba(59, 130, 246, 0.35);
+    }
+    100% {
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 20px rgba(59, 130, 246, 0.15);
+    }
+}
+
 .luxury-card, .luxury-editorial-card, .glass-card, .event-section {
     background: var(--bg-card) !important;
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--border-accent) !important;
-    border-radius: 4px !important;
-    padding: 2.25rem !important; /* Generous breathing room preventing borders from hugging captions */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+    border-radius: 6px !important;
+    padding: 2.5rem !important;
+    animation: cinematicFadeUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
 }
 
 .luxury-card p, .luxury-editorial-card p, .glass-card p {
     margin-bottom: 1.25rem !important;
+    color: #cbd5e1 !important;
+    letter-spacing: 0.03em;
 }
 
 .luxury-card h3, .luxury-editorial-card h3, .glass-card h3 {
@@ -125,8 +160,12 @@ body {
 
 .luxury-card:hover, .luxury-editorial-card:hover, .glass-card:hover, .event-section:hover {
     border-color: rgba(59, 130, 246, 0.8) !important;
-    transform: translateY(-5px) !important;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(59, 130, 246, 0.25) !important;
+    transform: translateY(-8px) !important;
+    animation: ambientGlowPulse 3s infinite ease-in-out;
+}
+
+section, header {
+    animation: cinematicFadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 /* Social Icons & Footer */
@@ -148,7 +187,7 @@ body {
     color: var(--accent-color) !important;
     border-color: var(--accent-color) !important;
     transform: translateY(-3px) scale(1.05) !important;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4) !important;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5) !important;
 }
 
 footer {

@@ -1,448 +1,230 @@
-/* ==========================================
-   Luxury Wedding Photography - Custom Theme
-   ========================================== */
+/* ==========================================================
+   Luxury Editorial Photography - Navy Blue & Midnight Theme
+   (Universal Cinzel Font & Cinematic Animations)
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-    --bg-dark: #080808;
-    --bg-darker: #050505;
-    --bg-card: rgba(15, 15, 15, 0.75);
-    --gold: #d4af37;
-    --gold-hover: #f3e5ab;
-    --gold-dark: #aa8c2c;
-    --text-light: #e5e5e5;
-    --text-muted: #adb5bd;
-    --border-color: rgba(212, 175, 55, 0.15);
-    --font-serif: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Montserrat', sans-serif;
+    --bg-dark: #03050a;                 /* Deep Midnight Blue-Black Base */
+    --bg-charcoal: #090d16;             /* Rich Deep Navy for Alternating Sections */
+    --bg-card: rgba(13, 20, 36, 0.75);  /* Ice-tinted Navy Glass Surface */
+    --accent-color: #3b82f6 !important;   /* Elegant Refined Navy/Blue Accent */
+    --accent-hover: #1d4ed8 !important;   /* Deep Navy Hover */
+    --text-light: #f0f4f8;
+    --text-muted: #94a3b8;
+    --border-accent: rgba(59, 130, 246, 0.25);
+    --glass-blur: blur(20px);
+}
+
+/* UNIVERSAL FONT OVERRIDE: Force Cinzel across every element on the website */
+html, body, p, span, a, h1, h2, h3, h4, h5, h6, 
+button, input, textarea, label, .btn, .nav-link, .navbar-brand {
+    font-family: 'Cinzel', serif !important;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    font-family: var(--font-sans);
-    font-weight: 300;
-    overflow-x: hidden;
+    background-color: var(--bg-dark) !important;
+    color: var(--text-light) !important;
+    font-weight: 400;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 75px !important;
+    letter-spacing: 0.05em; /* Gives Cinzel that spaced, majestic luxury look */
 }
 
-/* Typography */
-.font-serif {
-    font-family: var(--font-serif) !important;
+/* Explicit Alternating Background Classes */
+.bg-black-section {
+    background-color: var(--bg-dark) !important;
 }
 
-.tracking-wider {
+.bg-charcoal-section {
+    background-color: var(--bg-charcoal) !important;
+}
+
+/* Theme Accents */
+.text-gold, .text-accent {
+    color: var(--accent-color) !important;
+}
+
+/* Buttons - Sharp Luxury Edges with Cinematic Glow */
+.btn-accent, .btn-gold {
+    background: var(--accent-color) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--accent-color) !important;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    border-radius: 0px !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.btn-accent:hover, .btn-gold:hover {
+    background: var(--accent-hover) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6) !important;
+    transform: translateY(-2px);
+    border-radius: 0px !important;
+}
+
+.btn-luxury-outline {
+    border: 1px solid rgba(59, 130, 246, 0.5) !important;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    text-transform: uppercase;
     letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    padding: 12px 28px;
+    border-radius: 0px !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
 }
 
-.tracking-widest {
-    letter-spacing: 0.25em;
-}
-
-/* Colors & Accents */
-.text-gold {
-    color: var(--gold) !important;
-}
-
-.bg-gold {
-    background-color: var(--gold) !important;
-    color: #000 !important;
-}
-
-.bg-gold:hover {
-    background-color: var(--gold-hover) !important;
-    color: #000 !important;
-}
-
-.btn-gold {
-    background-color: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    transition: all 0.4s ease;
-}
-
-.btn-gold:hover {
-    background-color: var(--gold);
-    border-color: var(--gold);
-    color: #000;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-}
-
-.hover-gold:hover {
-    color: var(--gold) !important;
-    transition: color 0.3s ease;
+.btn-luxury-outline:hover {
+    background: var(--accent-color) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6) !important;
+    transform: translateY(-2px);
+    border-radius: 0px !important;
 }
 
 /* Navbar */
 .luxury-navbar {
-    background: rgba(8, 8, 8, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    transition: background 0.4s ease;
+    background: rgba(3, 5, 10, 0.9) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border-accent);
 }
 
 .luxury-navbar .nav-link {
     color: var(--text-light) !important;
     font-weight: 500;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
     transition: color 0.3s ease;
 }
 
 .luxury-navbar .nav-link:hover,
 .luxury-navbar .nav-link.active {
-    color: var(--gold) !important;
+    color: var(--accent-color) !important;
 }
 
-/* Luxury Editorial Card (Sharp Minimalist Style) */
-.luxury-editorial-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 0px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.luxury-editorial-card:hover {
-    border-color: rgba(212, 175, 55, 0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* Legacy Card Support */
-.luxury-card {
-    background-color: #161616;
-    border: 1px solid #262626;
-    border-radius: 0px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-}
-
-.luxury-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--gold);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-}
-
-/* Glassmorphism Effect */
-.glass-card {
-    background: rgba(20, 20, 20, 0.65);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    border-radius: 0px;
-}
-
-.glass-card:hover {
-    border-color: rgba(212, 175, 55, 0.5);
-    transition: all 0.3s ease-in-out;
-}
-
-/* Minimalist Outlined Buttons */
-.btn-luxury-outline {
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    color: #ffffff;
-    background: transparent;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.75rem;
-    padding: 12px 28px;
-    transition: all 0.3s ease;
-    border-radius: 0px;
-}
-
-.btn-luxury-outline:hover {
-    background: var(--gold);
-    color: #000000;
-    border-color: var(--gold);
-}
-
-/* Form Inputs */
-input.form-control, textarea.form-control, select.form-select {
-    background-color: #161616 !important;
-    border: 1px solid var(--border-color) !important;
-    color: var(--text-light) !important;
-    border-radius: 0px !important;
-}
-
-input.form-control:focus, textarea.form-control:focus, select.form-select:focus {
-    background-color: #161616 !important;
-    border-color: var(--gold) !important;
-    color: var(--text-light) !important;
-    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
-}
-
-/* Alerts */
-.alert-gold {
-    background-color: rgba(212, 175, 55, 0.15);
-    border: 1px solid var(--gold);
-    color: var(--gold-hover);
-}
-
-/* Hero Editorial Background */
-.hero-editorial-bg {
-    background: linear-gradient(
-        to bottom, 
-        rgba(8, 8, 8, 0.6), 
-        rgba(8, 8, 8, 0.4) 50%, 
-        rgba(8, 8, 8, 0.95)
-    ), 
-    url('../images/hero-wedding.jpg') center/cover no-repeat;
-    position: relative;
-}
-
-.hero-editorial-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, transparent 20%, rgba(8, 8, 8, 0.85) 90%);
-    pointer-events: none;
-}
-
-/* Footer */
-footer {
-    background-color: var(--bg-darker);
-    border-top: 1px solid var(--border-color);
-}
 /* ==========================================================
-   EVENTS CAPTURED
-========================================================== */
-
-.events-hero{
-    padding:140px 0 80px;
-    text-align:center;
-    background:#111;
+   Advanced Cinematic Glassmorphism Cards & Animations
+   ========================================================== */
+@keyframes cinematicFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.events-hero h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:4rem;
-    color:#fff;
-    letter-spacing:2px;
+@keyframes ambientGlowPulse {
+    0% {
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 20px rgba(59, 130, 246, 0.15);
+    }
+    50% {
+        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.95), 0 0 35px rgba(59, 130, 246, 0.35);
+    }
+    100% {
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 20px rgba(59, 130, 246, 0.15);
+    }
 }
 
-.section-subtitle{
-    color:#d4af37;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    font-size:.85rem;
-    display:block;
-    margin-bottom:20px;
+.luxury-card, .luxury-editorial-card, .glass-card, .event-section {
+    background: var(--bg-card) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-accent) !important;
+    border-radius: 6px !important;
+    padding: 2.5rem !important;
+    animation: cinematicFadeUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
 }
 
-.hero-description{
-    max-width:700px;
-    margin:auto;
-    color:#bdbdbd;
-    line-height:1.9;
+.luxury-card p, .luxury-editorial-card p, .glass-card p {
+    margin-bottom: 1.25rem !important;
+    color: #cbd5e1 !important;
+    letter-spacing: 0.03em;
 }
 
-
-/* ========================================= */
-
-.event-section{
-    margin:100px 0;
+.luxury-card h3, .luxury-editorial-card h3, .glass-card h3 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 1rem !important;
 }
 
-.event-header{
-    margin-bottom:35px;
+.luxury-card:hover, .luxury-editorial-card:hover, .glass-card:hover, .event-section:hover {
+    border-color: rgba(59, 130, 246, 0.8) !important;
+    transform: translateY(-8px) !important;
+    animation: ambientGlowPulse 3s infinite ease-in-out;
 }
 
-.event-location{
-    display:inline-block;
-    color:#d4af37;
-    border:1px solid rgba(212,175,55,.35);
-    padding:8px 18px;
-    border-radius:30px;
-    margin-bottom:18px;
+section, header {
+    animation: cinematicFadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
-.event-header h2{
-    font-family:'Cormorant Garamond',serif;
-    color:#fff;
-    font-size:2.7rem;
+/* Social Icons & Footer */
+.social-icons a, footer a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid var(--border-accent) !important;
+    color: var(--text-light) !important;
+    transition: all 0.3s ease !important;
 }
 
-.event-header p{
-    color:#9d9d9d;
-    max-width:650px;
-    line-height:1.8;
+.social-icons a:hover, footer a:hover {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5) !important;
 }
 
-
-/* ========================================= */
-/* HERO IMAGE */
-
-.gallery-large{
-    margin-bottom:18px;
+footer {
+    background-color: #020306 !important;
+    border-top: 1px solid var(--border-accent) !important;
 }
 
-.gallery-large img{
-    width:100%;
-    height:auto;
-    display:block;
-    border-radius:18px;
-    box-shadow:0 15px 45px rgba(0,0,0,.35);
-    transition:.4s ease;
+/* ==========================================================
+   Mobile Alignment & Overflow Prevention Fix
+   ========================================================== */
+img, video, canvas, svg {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
-
-/* ========================================= */
-/* SMALL IMAGES */
-
-.gallery-two{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px;
-
+* {
+    box-sizing: border-box !important;
 }
 
-.gallery-two img{
-
-    width:100%;
-
-    display:block;
-
-    height:auto;
-
-    object-fit:contain;
-
-    border-radius:18px;
-
-    background:#0d0d0d;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.35);
-
+html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-
-/* ========================================= */
-/* IMAGE CARD */
-
-.gallery-large img,
-.gallery-two img{
-
-    transition:.45s;
-
-    cursor:pointer;
-
-    border:1px solid rgba(255,255,255,.05);
-
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
 }
 
-.gallery-large img:hover,
-.gallery-two img:hover{
-
-    transform:translateY(-6px);
-
-    border-color:#d4af37;
-
-    box-shadow:0 20px 55px rgba(212,175,55,.25);
-
-}
-
-
-/* ========================================= */
-
-.event-divider{
-
-    border:0;
-
-    height:1px;
-
-    margin:90px auto;
-
-    background:linear-gradient(
-        to right,
-        transparent,
-        rgba(212,175,55,.7),
-        transparent
-    );
-
-}
-
-
-/* ========================================= */
-/* MOBILE */
-
-@media(max-width:991px){
-
-.events-hero h1{
-    font-size:3rem;
-}
-
-.gallery-two{
-
-    grid-template-columns:1fr;
-
-}
-
-.gallery-large img{
-
-    max-height:700px;
-
-}
-
-.gallery-two img{
-
-    max-height:450px;
-
-}
-
-}
-
-
-@media(max-width:768px){
-
-.events-hero{
-
-    padding:120px 0 60px;
-
-}
-
-.events-hero h1{
-
-    font-size:2.5rem;
-
-}
-
-.event-header h2{
-
-    font-size:2rem;
-
-}
-
-.gallery-large img{
-
-    max-height:550px;
-
-}
-
-.gallery-two img{
-
-    max-height:350px;
-
-}
-
-}
-
-
-@media(max-width:480px){
-
-.gallery-large img{
-
-    max-height:480px;
-
-}
-
-.gallery-two img{
-
-    max-height:300px;
-
-}
-
+@media (max-width: 768px) {
+    .container, .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        overflow-x: hidden !important;
+    }
 }
