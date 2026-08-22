@@ -19,6 +19,19 @@
 <!-- Booking Form Section -->
 <section class="py-5 my-3">
     <div class="container" style="max-width: 750px;">
+        
+        <!-- SUCCESS POP-UP ALERT NOTIFICATION -->
+        {% if messages %}
+            <div class="mb-4">
+                {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible fade show text-center rounded-0 border-gold bg-dark text-white" role="alert" style="border-color: #3b82f6 !important;">
+                        {{ message }}
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
         <div class="card luxury-card p-4 p-md-5 bg-dark border rounded-0">
             <form method="POST">
                 {% csrf_token %}

@@ -19,6 +19,11 @@ ALLOWED_HOSTS = [
     "ikp-photography.onrender.com",
 ]
 
+# CRITICAL FIX: Trust your live Render domain for POST requests (Booking & Contact forms)
+CSRF_TRUSTED_ORIGINS = [
+    "https://ikp-photography.onrender.com",
+]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -71,7 +76,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-# Database Configuration (Forced strictly to local SQLite to prevent cloud crashes)
+# Database Configuration (Forced strictly to local SQLite)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -141,8 +146,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'soumikmaity54555@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = os.environ.get('ariajwnaaxgsjvzi')
 DEFAULT_FROM_EMAIL = f"IKP Photography <{EMAIL_HOST_USER}>"
 
 # Designated Client Receiving Address for Booking Inquiries
-ADMIN_RECEIVER_EMAIL = 'karmakar.indrajit02@gmail.com'
+ADMIN_RECEIVER_EMAIL = 'soumikmaity54555@gmail.com'

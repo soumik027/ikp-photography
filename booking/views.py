@@ -42,7 +42,7 @@ def book_event_view(request, package_id=None):
                 f"Log in to Django Admin to view and confirm."
             )
             
-            recipient_list = [recipient_email]  # <-- Now points directly to karmakar.indrajit02@gmail.com or admin setting
+            recipient_list = [recipient_email]  # <-- Points directly to admin setting or default email
             
             try:
                 send_mail(
