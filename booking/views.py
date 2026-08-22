@@ -4,7 +4,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from .models import Package, Booking
 from .forms import BookingForm
-from contact.models import SiteSettings  # <-- Import SiteSettings from contact app
+from contact.models import SiteSettings  
 
 def packages_view(request):
     packages = Package.objects.all()
@@ -14,53 +14,56 @@ def packages_view(request):
     return render(request, 'booking/packages.html', context)
 
 def book_event_view(request, package_id=None):
-    initial_data = {}
+    pkg = None
     if package_id:
         pkg = get_object_or_404(Package, pk=package_id)
-        initial_data['selected_package'] = pkg
 
     if request.method == 'POST':
         form = BookingForm(request.POST)
+        
+        # --- ADD THESE DEBUG PRINTS ---
+        print("--- FORM SUBMISSION ATTEMPT ---")
         if form.is_valid():
-            booking = form.save()
+            print("Form is VALID. Proceeding to save and email...")
+            booking = form.save(commit=False)
+            if pkg:
+                booking.selected_package = pkg
+            booking.save()
+            print("Booking saved successfully to database!")
             
-            # Dynamically fetch the client's receiving email from the database settings
-            site_settings = SiteSettings.objects.first()
-            recipient_email = site_settings.booking_notification_email if site_settings and site_settings.booking_notification_email else 'karmakar.indrajit02@gmail.com'
+            recipient_email = 'soumikmaity54555@gmail.com'
+            try:
+                site_settings = SiteSettings.objects.first()
+                if site_settings and site_settings.booking_notification_email:
+                    recipient_email = site_settings.booking_notification_email
+            except Exception as e:
+                print(f"SiteSettings fetch error: {e}")
             
-            # Send Email Notification to Photographer / Client
-            subject = f"New Wedding Booking Inquiry: {booking.name}"
-            message = (
-                f"You have received a new booking inquiry!\n\n"
-                f"Name: {booking.name}\n"
-                f"Phone: {booking.phone}\n"
-                f"Email: {booking.email}\n"
-                f"Event Date: {booking.event_date}\n"
-                f"Venue: {booking.venue}\n"
-                f"Package: {booking.selected_package if booking.selected_package else 'None selected'}\n"
-                f"Message:\n{booking.message}\n\n"
-                f"Log in to Django Admin to view and confirm."
-            )
-            
-            recipient_list = [recipient_email]  # <-- Points directly to admin setting or default email
-            
+            print(f"Attempting to send mail to: {recipient_email}")
             try:
                 send_mail(
-                    subject, 
-                    message, 
-                    settings.DEFAULT_FROM_EMAIL, 
-                    recipient_list, 
+                    subject="Test Subject", 
+                    message="Test Body", 
+                    from_email=settings.DEFAULT_FROM_EMAIL, 
+                    recipient_list=[recipient_email], 
                     fail_silently=False
                 )
-            except Exception as e:
-                print(f"Email error: {e}")
+                print("Mail sent function executed without crashing!")
+            except Exception as mail_err:
+                print(f"EXACT EMAIL ERROR: {mail_err}")
 
-            messages.success(request, "Your booking inquiry has been sent successfully! We will get in touch with you shortly.")
+            messages.success(request, "Your booking inquiry has been sent successfully!")
             return redirect('packages')
+        else:
+            # THIS WILL PRINT WHY THE FORM FAILED
+            print(f"Form is INVALID! Errors: {form.errors}")
+            
     else:
+        initial_data = {'selected_package': pkg} if pkg else {}
         form = BookingForm(initial=initial_data)
 
     context = {
         'form': form,
+        'package': pkg,
     }
     return render(request, 'booking/book_form.html', context)

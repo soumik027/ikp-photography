@@ -149,5 +149,4 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'soumikmaity54555@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('ariajwnaaxgsjvzi')
 DEFAULT_FROM_EMAIL = f"IKP Photography <{EMAIL_HOST_USER}>"
 
-# Designated Client Receiving Address for Booking Inquiries
-ADMIN_RECEIVER_EMAIL = 'soumikmaity54555@gmail.com'
+
