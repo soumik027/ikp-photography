@@ -1,117 +1,223 @@
-/* Dark Luxury Theme for Django Admin */
-body {
-    background-color: #0b0b0b !important;
-    color: #e0e0e0 !important;
-    font-family: inherit;
+/* ==========================================================
+   ULTRA-PREMIUM CINEMATIC DARK ADMIN THEME
+   (Navy Blue, Cinzel Typography & Glassmorphism)
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+
+:root {
+    --admin-bg-dark: #03050a;
+    --admin-bg-surface: #090d16;
+    --admin-glass: rgba(13, 20, 36, 0.85);
+    --admin-accent: #3b82f6;
+    --admin-accent-hover: #1d4ed8;
+    --admin-border: rgba(59, 130, 246, 0.3);
+    --admin-text: #f0f4f8;
+    --admin-muted: #94a3b8;
 }
 
-/* Header & Navigation */
+/* Force Cinzel & Theme Colors Globally in Admin */
+body, #container, div.breadcrumbs, .module, table, input, textarea, select, .button {
+    font-family: 'Cinzel', serif !important;
+    letter-spacing: 0.04em;
+}
+
+body {
+    background-color: var(--admin-bg-dark) !important;
+    color: var(--admin-text) !important;
+}
+
+/* Header & Navigation Bar */
 #header {
-    background: #000000 !important;
-    color: #d4af37 !important;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    background: linear-gradient(135deg, #03050a, #090d16) !important;
+    color: var(--admin-text) !important;
+    border-bottom: 1px solid var(--admin-border) !important;
+    padding: 15px 25px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 #header a:link, #header a:visited {
-    color: #d4af37 !important;
+    color: var(--admin-text) !important;
+    transition: color 0.3s ease;
+}
+
+#header a:hover {
+    color: var(--admin-accent) !important;
+}
+
+#branding h1 {
+    color: var(--admin-text) !important;
+    font-weight: 700;
+}
+
+#user-tools {
+    color: var(--admin-muted) !important;
 }
 
 /* Breadcrumbs */
 div.breadcrumbs {
-    background: #141414 !important;
-    color: #a0a0a0 !important;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    background: var(--admin-bg-surface) !important;
+    color: var(--admin-muted) !important;
+    border-bottom: 1px solid var(--admin-border) !important;
+    padding: 12px 25px !important;
+    font-size: 0.85rem;
 }
 
 div.breadcrumbs a {
-    color: #d4af37 !important;
+    color: var(--admin-accent) !important;
+    text-decoration: none;
 }
 
-/* Content Area & Modules */
+/* Main Content Area & Glassmorphism Modules */
 #content {
-    background: #0b0b0b !important;
+    background: var(--admin-bg-dark) !important;
+    padding: 30px !important;
 }
 
 .module, .dashboard .module {
-    background: #121212 !important;
-    border: 1px solid rgba(212, 175, 55, 0.2) !important;
-    border-radius: 0px !important;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    background: var(--admin-glass) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+    margin-bottom: 25px !important;
+    transition: all 0.3s ease;
 }
 
-.module caption, .inline-group h2 {
-    background: #1a1a1a !important;
-    color: #d4af37 !important;
+.module:hover {
+    border-color: rgba(59, 130, 246, 0.6) !important;
+    box-shadow: 0 20px 45px rgba(59, 130, 246, 0.15) !important;
+}
+
+.module caption, .inline-group h2, .module h2 {
+    background: rgba(13, 20, 36, 0.95) !important;
+    color: var(--admin-text) !important;
     font-weight: 600;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid var(--admin-border) !important;
+    padding: 12px 20px !important;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
 }
 
 /* Tables & Lists */
 table {
-    background: #121212 !important;
-    color: #e0e0e0 !important;
+    background: transparent !important;
+    color: var(--admin-text) !important;
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
 }
 
 thead th {
-    background: #1a1a1a !important;
-    color: #d4af37 !important;
-    border-bottom: 2px solid #d4af37 !important;
+    background: #090d16 !important;
+    color: var(--admin-accent) !important;
+    border-bottom: 2px solid var(--admin-accent) !important;
+    padding: 14px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 tr.row1 {
-    background: #121212 !important;
+    background: rgba(13, 20, 36, 0.4) !important;
 }
 
 tr.row2 {
-    background: #161616 !important;
+    background: rgba(13, 20, 36, 0.7) !important;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
 }
 
 tbody tr:hover {
-    background: #1f1f1f !important;
+    background: rgba(59, 130, 246, 0.12) !important;
 }
 
-/* Form Inputs & Fields */
+td, th {
+    border-bottom: 1px solid rgba(59, 130, 246, 0.1) !important;
+    padding: 12px 14px !important;
+}
+
+/* Form Inputs, Textareas & Selects */
 input, textarea, select {
-    background: #1a1a1a !important;
+    background: rgba(3, 5, 10, 0.8) !important;
     color: #ffffff !important;
-    border: 1px solid rgba(212, 175, 55, 0.3) !important;
-    border-radius: 0px !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 4px !important;
+    padding: 10px 14px !important;
+    transition: all 0.3s ease;
 }
 
 input:focus, textarea:focus, select:focus {
-    border-color: #d4af37 !important;
-    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+    border-color: var(--admin-accent) !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.35) !important;
+    outline: none;
 }
 
-/* Buttons (Gold Luxury Look) */
+/* Cinematic Accent Buttons */
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
-    background: #d4af37 !important;
-    color: #000000 !important;
-    border: none !important;
-    border-radius: 0px !important;
+    background: var(--admin-accent) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--admin-accent) !important;
+    border-radius: 4px !important;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
+    padding: 10px 22px !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 .button:hover, input[type=submit]:hover {
-    background: #c59b27 !important;
+    background: var(--admin-accent-hover) !important;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6) !important;
+    transform: translateY(-2px);
+}
+
+.submit-row {
+    background: var(--admin-bg-surface) !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 6px !important;
+    padding: 15px !important;
 }
 
 /* Pagination & Footers */
 .paginator {
-    background: #121212 !important;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    color: #e0e0e0 !important;
+    background: var(--admin-bg-surface) !important;
+    border-top: 1px solid var(--admin-border) !important;
+    color: var(--admin-muted) !important;
+    padding: 15px !important;
+    font-size: 0.85rem;
 }
 
 .paginator a:link, .paginator a:visited {
-    background: #1a1a1a !important;
-    color: #d4af37 !important;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(13, 20, 36, 0.9) !important;
+    color: var(--admin-accent) !important;
+    border: 1px solid var(--admin-border) !important;
+    padding: 6px 12px;
+    border-radius: 4px;
 }
 
 .paginator span.current {
-    background: #d4af37 !important;
-    color: #000000 !important;
+    background: var(--admin-accent) !important;
+    color: #ffffff !important;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+/* Dashboard App Lists */
+.app-auth table, .app-home table, .app-booking table {
+    border-radius: 4px;
+}
+
+.dashboard .module table th a {
+    color: var(--admin-text) !important;
+}
+
+.dashboard .module table td.action-checkbox {
+    width: 2em;
 }
