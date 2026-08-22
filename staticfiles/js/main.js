@@ -13,24 +13,33 @@ document.addEventListener("DOMContentLoaded", function () {
     if (navbar) {
         window.addEventListener('scroll', function () {
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(8, 8, 8, 0.95)';
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
+                navbar.style.background = 'rgba(3, 5, 10, 0.95)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.8)';
             } else {
-                navbar.style.background = 'rgba(8, 8, 8, 0.85)';
+                navbar.style.background = 'rgba(3, 5, 10, 0.9)';
                 navbar.style.boxShadow = 'none';
             }
         });
     }
 
-    // 3. Force redirect to home page if the user refreshes any sub-page
-    if (window.performance) {
-        let navEntries = performance.getEntriesByType("navigation");
-        if ((navEntries.length > 0 && navEntries[0].type === "reload") || 
-            (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
-            if (window.location.pathname !== "/") {
-                window.location.href = "/";
-            }
+    // 3. Bulletproof Refresh-to-Home Redirect
+    // Check if a navigation flag already exists in this tab session
+    const currentPath = window.location.pathname;
+    
+    if (currentPath !== "/") {
+        // If we are on a sub-page, check if this page load was a refresh
+        // We use a sessionStorage marker combined with a page-hide listener
+        window.addEventListener('beforeunload', function () {
+            sessionStorage.setItem('isReloading', 'true');
+        });
+
+        if (sessionStorage.getItem('isReloading') === 'true') {
+            sessionStorage.removeItem('isReloading');
+            window.location.replace("/");
         }
+    } else {
+        // Clear flag if we successfully reached home
+        sessionStorage.removeItem('isReloading');
     }
 
     // 4. Mobile touch element state management
