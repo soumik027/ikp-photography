@@ -228,3 +228,35 @@ html, body {
         overflow-x: hidden !important;
     }
 }
+/* Footer Developer Credit Fix - Prevents vertical letter stacking */
+.developer-credit-wrapper {
+    display: block !important;
+    letter-spacing: 0.03em !important;
+    word-spacing: normal !important;
+    white-space: normal !important;
+}
+
+.developer-credit-wrapper a {
+    display: inline !important;
+    letter-spacing: normal !important;
+    white-space: nowrap !important;
+}
+/* Reset footer circle button styles for the developer credit link */
+footer a.developer-link {
+    display: inline !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+footer a.developer-link:hover {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    color: var(--accent-color) !important;
+}
