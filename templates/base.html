@@ -81,24 +81,27 @@
         {% endblock %}
     </main>
 
-    <!-- Luxury Footer -->
     <footer class="bg-black border-top border-dark text-center py-5 mt-5">
-        <div class="container py-3">
-            <h3 class="font-serif h4 text-white mb-2">Indrajeet Karmakar Photography</h3>
-            <p class="text-secondary small mb-4">Capturing eternal love stories with cinematic elegance.</p>
-            <div class="d-flex justify-content-center gap-4 mb-4 text-gold">
-                <a href="https://www.instagram.com/indrajit_karmakar_official?igsh=MWtpcGh6MDZkdGdiMQ=="  target="_blank" class="text-gold"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="https://www.facebook.com/share/1Cm3a5YX8T/"  target="_blank"  class="text-gold"><i class="fab fa-facebook-f fa-lg"></i></a>
-                <a href="https://www.youtube.com/@indrajitkarmakarofficial8741"  target="_blank"  class="text-gold"><i class="fab fa-youtube fa-lg"></i></a>
-                <a href="mailto:karmakar.indrajit02@gmail.com" target="_blank" class="text-gold" aria-label="Email Indrajeet Karmakar Photography">
-    <i class="far fa-envelope fa-lg"></i>
-</a>
-
-            </div>
-            <p class="text-secondary small mb-0 tracking-wider">&copy; 2026 Indrajeet Karmakar. All rights reserved.</p>
+    <div class="container py-3">
+        <h3 class="font-serif h4 text-white mb-2">Indrajeet Karmakar Photography</h3>
+        <p class="text-secondary small mb-4">Capturing eternal love stories with cinematic elegance.</p>
+        <div class="d-flex justify-content-center gap-4 mb-4 text-gold">
+            <a href="https://www.instagram.com/indrajit_karmakar_official?igsh=MWtpcGh6MDZkdGdiMQ==" target="_blank" class="text-gold"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.facebook.com/share/1Cm3a5YX8T/" target="_blank" class="text-gold"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="https://www.youtube.com/@indrajitkarmakarofficial8741" target="_blank" class="text-gold"><i class="fab fa-youtube fa-lg"></i></a>
+            <a href="mailto:karmakar.indrajit02@gmail.com" target="_blank" class="text-gold" aria-label="Email Indrajeet Karmakar Photography">
+                <i class="far fa-envelope fa-lg"></i>
+            </a>
         </div>
-    </footer>
-
+        <p class="text-secondary small mb-1 tracking-wider">&copy; 2026 Indrajeet Karmakar. All rights reserved.</p>
+        
+        <!-- Clean wrapper class neutralizes the global Cinzel vertical-wrap bug -->
+        <p class="text-secondary small mb-0 developer-credit-wrapper">
+            Crafted with clean code & precision by 
+            <a href="https://soumik27.netlify.app/" target="_blank" class="text-gold text-decoration-none">Soumik Maity</a>
+        </p>
+    </div>
+</footer>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     {% block extra_js %}{% endblock %}
